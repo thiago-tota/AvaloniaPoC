@@ -26,6 +26,7 @@ namespace Component
 
         private Timer _renderImagesTimer;
         private List<string> _imageList;
+        private List<string> _imageListCopy = new List<string>();
 
         #endregion
 
@@ -76,10 +77,15 @@ namespace Component
         {
             try
             {
+                int n = 0;
+                _imageListCopy.AddRange(_imageList);
+
                 foreach (var item in MediaStreams)
                 {
-                    item.Stream = new Bitmap(_imageList[new Random().Next(0, _imageList.Count - 1)]);
+                    n = new Random().Next(0, _imageListCopy.Count);
+                    item.Stream = new Bitmap(_imageListCopy[n]);
                     item.UpdatedAt = DateTime.UtcNow;
+                    _imageListCopy.RemoveAt(n);
                 }
             }
             catch (Exception ex)

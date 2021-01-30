@@ -12,20 +12,20 @@ namespace AvaloniaRenderImage.Helper
         /// <summary>
         /// arg1 is the message do be displayed.
         /// </summary>
-        public event Action<string> OnNotificationMessage = delegate { };
+        public event Action<string?> OnNotificationMessage = delegate { };
 
         /// <summary>
         /// arg1 is the message to be displayed.
         /// arg2 is the text to be displayed on the button.
         /// </summary>
-        public event Action<string, string> OnDialogPopUpOneButton = delegate { };
+        public event Action<string?, string?> OnDialogPopUpOneButton = delegate { };
 
         /// <summary>
         /// arg1 is the message to be displayed.
         /// arg2 is the text to be displayed on the confirm button.
         /// arg3 is the text to be displayed on the cancel button.
         /// </summary>
-        public event Func<string, string, string, Task<bool>> OnDialogPopUpTwoButtons = delegate { return default; };
+        public event Func<string, string?, string?, Task<bool>?> OnDialogPopUpTwoButtons = delegate { return default; };
 
         /// <summary>
         /// Call Navigate method.
@@ -49,7 +49,7 @@ namespace AvaloniaRenderImage.Helper
             OnNotificationMessage(message);
         }
 
-        public void ExecuteDialogPopUpOneButtonEvent(string message, string buttonText = default)
+        public void ExecuteDialogPopUpOneButtonEvent(string message, string? buttonText = default)
         {
             OnDialogPopUpOneButton(message, buttonText);
         }
