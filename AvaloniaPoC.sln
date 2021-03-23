@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvaloniaRenderImage", "AvaloniaRenderImage\AvaloniaRenderImage\AvaloniaRenderImage.csproj", "{9A2C7DB6-D28E-4360-AEEE-6FD1077AEDD7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestPublishSizeNet5", "TestPublishSizeNet5\TestPublishSizeNet5.csproj", "{8B01A18E-C7C4-4040-8607-E58B1F79A15C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvaloniaWebBrowserControl", "AvaloniaWebBrowserControl\AvaloniaWebBrowserControl.csproj", "{4BEE8756-5143-49FE-AD07-851D1E33B521}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{6B4A5F23-D8DD-438C-94B4-94FE188F4912}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Shared\Common\Common.csproj", "{877BF171-B90E-46AF-A4F2-4E59224A720E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RenderImage", "RenderImage", "{44A982EF-356E-43EF-A804-09DE12B029A7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Component", "AvaloniaRenderImage\Component\Component.csproj", "{C0E9D9BB-5ADE-4B1A-B353-9B0DEC30A924}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A2C7DB6-D28E-4360-AEEE-6FD1077AEDD7}.Debug|x64.ActiveCfg = Debug|x64
+		{9A2C7DB6-D28E-4360-AEEE-6FD1077AEDD7}.Debug|x64.Build.0 = Debug|x64
+		{9A2C7DB6-D28E-4360-AEEE-6FD1077AEDD7}.Release|x64.ActiveCfg = Release|x64
+		{8B01A18E-C7C4-4040-8607-E58B1F79A15C}.Debug|x64.ActiveCfg = Debug|x64
+		{8B01A18E-C7C4-4040-8607-E58B1F79A15C}.Debug|x64.Build.0 = Debug|x64
+		{8B01A18E-C7C4-4040-8607-E58B1F79A15C}.Release|x64.ActiveCfg = Release|x64
+		{4BEE8756-5143-49FE-AD07-851D1E33B521}.Debug|x64.ActiveCfg = Debug|x64
+		{4BEE8756-5143-49FE-AD07-851D1E33B521}.Debug|x64.Build.0 = Debug|x64
+		{4BEE8756-5143-49FE-AD07-851D1E33B521}.Release|x64.ActiveCfg = Release|x64
+		{877BF171-B90E-46AF-A4F2-4E59224A720E}.Debug|x64.ActiveCfg = Debug|x64
+		{877BF171-B90E-46AF-A4F2-4E59224A720E}.Debug|x64.Build.0 = Debug|x64
+		{877BF171-B90E-46AF-A4F2-4E59224A720E}.Release|x64.ActiveCfg = Release|x64
+		{877BF171-B90E-46AF-A4F2-4E59224A720E}.Release|x64.Build.0 = Release|x64
+		{C0E9D9BB-5ADE-4B1A-B353-9B0DEC30A924}.Debug|x64.ActiveCfg = Debug|x64
+		{C0E9D9BB-5ADE-4B1A-B353-9B0DEC30A924}.Debug|x64.Build.0 = Debug|x64
+		{C0E9D9BB-5ADE-4B1A-B353-9B0DEC30A924}.Release|x64.ActiveCfg = Release|x64
+		{C0E9D9BB-5ADE-4B1A-B353-9B0DEC30A924}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9A2C7DB6-D28E-4360-AEEE-6FD1077AEDD7} = {44A982EF-356E-43EF-A804-09DE12B029A7}
+		{877BF171-B90E-46AF-A4F2-4E59224A720E} = {6B4A5F23-D8DD-438C-94B4-94FE188F4912}
+		{C0E9D9BB-5ADE-4B1A-B353-9B0DEC30A924} = {44A982EF-356E-43EF-A804-09DE12B029A7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F80DBC5-D91E-4DD1-8F3B-E3EE2466CAC7}
+	EndGlobalSection
+EndGlobal

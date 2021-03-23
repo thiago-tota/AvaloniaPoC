@@ -4,6 +4,17 @@
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
     <Platforms>x64</Platforms>
+    <RuntimeIdentifiers>win-x64;osx-x64;linux-x64</RuntimeIdentifiers>
+    <PublishTrimmed>true</PublishTrimmed>
+    <TrimMode>link</TrimMode>
+    <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
+
+    <CFBundleName>AvaloniaRenderImage</CFBundleName>
+    <CFBundleDisplayName>AvaloniaRenderImage</CFBundleDisplayName>
+    <CFBundleIdentifier>AvaloniaRenderImage</CFBundleIdentifier>
+    <CFBundleVersion>0.0.1</CFBundleVersion>
+    <CFBundleShortVersionString>0.0.1</CFBundleShortVersionString>
+    
   </PropertyGroup>
   <ItemGroup>
     <AvaloniaResource Include="Assets\**" />
@@ -27,7 +38,7 @@
     <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj" />
+    <ProjectReference Include="..\..\Shared\Common\Common.csproj" />
     <ProjectReference Include="..\Component\Component.csproj" />
   </ItemGroup>
   <ItemGroup>
