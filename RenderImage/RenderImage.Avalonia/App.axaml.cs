@@ -1,8 +1,9 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using RenderImage.ViewModel;
 
-namespace AvaloniaRenderImage
+namespace RenderImage.Avalonia
 {
     public class App : Application
     {

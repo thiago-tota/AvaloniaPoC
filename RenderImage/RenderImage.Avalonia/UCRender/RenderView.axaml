@@ -1,0 +1,32 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:uc="clr-namespace:Component;assembly=Component"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             Width="800" Height="450"
+             x:Class="RenderImage.Avalonia.UCRender.RenderView">
+
+	<UserControl.DataTemplates>
+		<DataTemplate DataType="{x:Type uc:UCMediaStreamViewModel}">
+			<uc:UCMediaStream/>
+		</DataTemplate>
+	</UserControl.DataTemplates>
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="50"/>
+		</Grid.RowDefinitions>
+
+		<StackPanel Orientation="Horizontal" Margin="5">
+			<Button Content="Start" HorizontalContentAlignment="Center" Width="110" Margin="0,0,5,0" Command="{Binding StartCommand}" IsEnabled="{Binding IsRendering, Converter={StaticResource InverseBooleanConverter}}" />
+			<Button Content="Stop" HorizontalContentAlignment="Center" Width="110" Command="{Binding StopCommand}" IsEnabled="{Binding IsRendering}"/>
+		</StackPanel>
+
+		<Border Grid.Row="1" BorderThickness="1" BorderBrush="Black" Margin="5,0,5,0">
+			<ContentControl Content="{Binding MediaStreams}" Margin="0" />
+		</Border>
+	</Grid>
+</UserControl>

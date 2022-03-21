@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30907.101
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvaloniaRenderImage", "AvaloniaRenderImage\AvaloniaRenderImage.csproj", "{9A2C7DB6-D28E-4360-AEEE-6FD1077AEDD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RenderImage.Avalonia", "RenderImage.Avalonia\RenderImage.Avalonia.csproj", "{9A2C7DB6-D28E-4360-AEEE-6FD1077AEDD7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Component", "Component\Component.csproj", "{C6EC7413-848D-4033-BF1C-B9F2A9756160}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{7FD486C4-C039-435B-B119-C344B2CD09CA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RenderImage.ViewModel", "RenderImage.ViewModel\RenderImage.ViewModel.csproj", "{09A2CCCF-6BBC-4736-AAED-6F3EBCC51ECE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +28,9 @@ Global
 		{7FD486C4-C039-435B-B119-C344B2CD09CA}.Debug|x64.Build.0 = Debug|x64
 		{7FD486C4-C039-435B-B119-C344B2CD09CA}.Release|x64.ActiveCfg = Release|x64
 		{7FD486C4-C039-435B-B119-C344B2CD09CA}.Release|x64.Build.0 = Release|x64
+		{09A2CCCF-6BBC-4736-AAED-6F3EBCC51ECE}.Debug|x64.ActiveCfg = Debug|x64
+		{09A2CCCF-6BBC-4736-AAED-6F3EBCC51ECE}.Debug|x64.Build.0 = Debug|x64
+		{09A2CCCF-6BBC-4736-AAED-6F3EBCC51ECE}.Release|x64.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

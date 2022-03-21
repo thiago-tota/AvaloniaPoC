@@ -2,7 +2,7 @@
 using Common.Helper;
 using System;
 
-namespace Component.DTO
+namespace Component.Dto
 {
     public class MediaStream : BindableBase
     {

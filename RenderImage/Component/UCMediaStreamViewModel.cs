@@ -1,8 +1,7 @@
-﻿
-using Anotar.Serilog;
-using Avalonia.Media.Imaging;
+﻿using Avalonia.Media.Imaging;
 using Common.Helper;
-using Component.DTO;
+using Component.Dto;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -90,7 +89,7 @@ namespace Component
             }
             catch (Exception ex)
             {
-                LogTo.Error(ex, MethodBase.GetCurrentMethod().Name);
+                Log.Error(ex, MethodBase.GetCurrentMethod()?.Name);
             }
         }
 
@@ -112,7 +111,7 @@ namespace Component
             }
             catch (Exception ex)
             {
-                LogTo.Error(ex, MethodBase.GetCurrentMethod().Name);
+                Log.Error(ex, MethodBase.GetCurrentMethod()?.Name);
             }
         }
 
@@ -124,7 +123,7 @@ namespace Component
             }
             catch (Exception ex)
             {
-                LogTo.Error(ex, MethodBase.GetCurrentMethod().Name);
+                Log.Error(ex, MethodBase.GetCurrentMethod()?.Name);
             }
         }
 
@@ -143,7 +142,7 @@ namespace Component
             }
             catch (Exception ex)
             {
-                LogTo.Error(ex, MethodBase.GetCurrentMethod().Name);
+                Log.Error(ex, MethodBase.GetCurrentMethod()?.Name);
             }
         }
 
@@ -162,7 +161,7 @@ namespace Component
             }
             catch (Exception ex)
             {
-                LogTo.Error(ex, MethodBase.GetCurrentMethod().Name);
+                Log.Error(ex, MethodBase.GetCurrentMethod()?.Name);
             }
         }
     }

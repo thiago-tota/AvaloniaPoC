@@ -1,9 +1,9 @@
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using AvaloniaRenderImage.Helper;
+using RenderImage.ViewModel;
 using System;
 
-namespace AvaloniaRenderImage
+namespace RenderImage.Avalonia
 {
     public class ViewLocator : IDataTemplate
     {
@@ -11,7 +11,7 @@ namespace AvaloniaRenderImage
 
         public IControl Build(object data)
         {
-            var name = data.GetType().FullName!.Replace("ViewModel", "View");
+            var name = data.GetType().FullName!.Replace("ViewModel", "View").Replace(".View.", ".Avalonia.");
             var type = Type.GetType(name);
 
             if (type != null)

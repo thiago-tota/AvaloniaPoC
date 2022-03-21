@@ -1,16 +1,11 @@
-﻿using Anotar.Serilog;
-using AvaloniaRenderImage.Helper;
-using Common.Helper;
+﻿using Common.Helper;
 using Microsoft.Extensions.Configuration;
 using Serilog;
-using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Reflection;
 
-namespace AvaloniaRenderImage
+namespace RenderImage.ViewModel
 {
-    internal class MainWindowViewModel : BindableBase
+    public class MainWindowViewModel : BindableBase
     {
         public MainWindowViewModel()
         {
@@ -48,7 +43,7 @@ namespace AvaloniaRenderImage
             }
         }
 
-        private string? notificationMessage = "Welcome to meeting application.";
+        private string? notificationMessage = "Welcome to example application.";
         public string? NotificationMessage
         {
             get => notificationMessage; set
@@ -78,7 +73,7 @@ namespace AvaloniaRenderImage
             }
             catch (Exception ex)
             {
-                LogTo.Error(ex, MethodBase.GetCurrentMethod().Name);
+                Log.Error(ex, MethodBase.GetCurrentMethod()?.Name);
                 throw;
             }
         }
@@ -94,7 +89,7 @@ namespace AvaloniaRenderImage
            .ReadFrom.Configuration(configuration)
            .CreateLogger();
 
-            LogTo.Information($"{AppDomain.CurrentDomain.FriendlyName} has started at {DateTime.Now}");
+            Log.Information($"{AppDomain.CurrentDomain.FriendlyName} has started at {DateTime.Now}");
         }
 
 

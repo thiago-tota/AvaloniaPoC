@@ -2,16 +2,13 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace AvaloniaRenderImage
+namespace RenderImage.Avalonia.UCRender
 {
-    public class MainWindow : Window
+    public class RenderView : UserControl
     {
-        public MainWindow()
+        public RenderView()
         {
             InitializeComponent();
-#if DEBUG
-            this.AttachDevTools();
-#endif
         }
 
         private void InitializeComponent()

@@ -1,19 +1,16 @@
-﻿using Anotar.Serilog;
-using AvaloniaRenderImage.Helper;
-using Common.Helper;
+﻿using Common.Helper;
 using Component;
-using System;
+using Serilog;
 using System.Reflection;
 
-namespace AvaloniaRenderImage.UCRender
+namespace RenderImage.ViewModel.UCRender
 {
-    internal class RenderViewModel : ViewModelBase
+    public class RenderViewModel : ViewModelBase
     {
         public RenderViewModel()
         {
             StartCommand = new RelayCommand(StartCommandExecute);
             StopCommand = new RelayCommand(StopCommandExecute);
-            CloseCommand = new RelayCommand(CloseCommandExecute);
 
             MediaStreams = new UCMediaStreamViewModel();
         }
@@ -22,7 +19,6 @@ namespace AvaloniaRenderImage.UCRender
 
         public RelayCommand StartCommand { get; set; }
         public RelayCommand StopCommand { get; set; }
-        public RelayCommand CloseCommand { get; set; }
 
         #endregion
 
@@ -57,7 +53,7 @@ namespace AvaloniaRenderImage.UCRender
             }
             catch (Exception ex)
             {
-                LogTo.Error(ex, MethodBase.GetCurrentMethod().Name);
+                Log.Error(ex, MethodBase.GetCurrentMethod()?.Name);
                 throw;
             }
         }
@@ -70,7 +66,7 @@ namespace AvaloniaRenderImage.UCRender
             }
             catch (Exception ex)
             {
-                LogTo.Error(ex, MethodBase.GetCurrentMethod().Name);
+                Log.Error(ex, MethodBase.GetCurrentMethod()?.Name);
                 throw;
             }
         }
@@ -84,7 +80,7 @@ namespace AvaloniaRenderImage.UCRender
             }
             catch (Exception ex)
             {
-                LogTo.Error(ex, MethodBase.GetCurrentMethod().Name);
+                Log.Error(ex, MethodBase.GetCurrentMethod()?.Name);
                 throw;
             }
         }
@@ -97,21 +93,8 @@ namespace AvaloniaRenderImage.UCRender
             }
             catch (Exception ex)
             {
-                LogTo.Error(ex, MethodBase.GetCurrentMethod().Name);
+                Log.Error(ex, MethodBase.GetCurrentMethod()?.Name);
                 throw;
-            }
-        }
-
-        private void CloseCommandExecute()
-        {
-            try
-            {
-                //Application.Current.Exit();
-            }
-            catch (Exception ex)
-            {
-                LogTo.Error(ex, MethodBase.GetCurrentMethod().Name);
-                ExecuteNotificationMessageEvent(ex.Message);
             }
         }
 
@@ -128,7 +111,6 @@ namespace AvaloniaRenderImage.UCRender
             if (disposing)
             {
                 //Free managed resources
-                CloseCommandExecute();
                 MediaStreams?.Dispose();
             }
 

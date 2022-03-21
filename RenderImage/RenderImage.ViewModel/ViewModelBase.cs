@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Common.Helper;
+﻿using Common.Helper;
 
-namespace AvaloniaRenderImage.Helper
+namespace RenderImage.ViewModel
 {
-    internal class ViewModelBase : BindableBase // ReactiveObject
+    public class ViewModelBase : BindableBase
     {
         //Events triggered to be handled by the Parent of the User Control.
 
         /// <summary>
         /// arg1 is the message do be displayed.
         /// </summary>
-        public event Action<string?> OnNotificationMessage = delegate { };
+        public event Action<string> OnNotificationMessage = delegate { };
 
         /// <summary>
         /// arg1 is the message to be displayed.
@@ -54,7 +51,7 @@ namespace AvaloniaRenderImage.Helper
             OnDialogPopUpOneButton(message, buttonText);
         }
 
-        public Task<bool> ExecuteDialogPopUpTwoButtonsEvent(string message, string? acceptText = default, string? cancelText = default)
+        public Task<bool>? ExecuteDialogPopUpTwoButtonsEvent(string message, string? acceptText = default, string? cancelText = default)
         {
             return OnDialogPopUpTwoButtons(message, acceptText, cancelText);
         }
