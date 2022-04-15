@@ -1,7 +1,5 @@
-﻿using Common.Helper;
-using Microsoft.Extensions.Configuration;
-using Serilog;
-using System.Reflection;
+﻿using System.Collections.Generic;
+using RenderImage.Shared.Helper;
 
 namespace RenderImage.ViewModel
 {
@@ -9,7 +7,6 @@ namespace RenderImage.ViewModel
     {
         public MainWindowViewModel()
         {
-            InitialiseSettings();
             NavigationCommand = new RelayCommand<string>(OnNavigate);
 
             //Load initial user contorl
@@ -56,42 +53,19 @@ namespace RenderImage.ViewModel
 
         private void OnNavigate(string destination)
         {
-            try
+            switch (destination)
             {
-                switch (destination)
-                {
-                    case "UserControlRender":
-                        if (!ViewObjects.ContainsKey(View.Render))
-                        {
-                            ViewObjects.Add(View.Render, new UCRender.RenderViewModel());
-                            StartStopViewModelBaseEventsListener(ViewObjects[View.Render], true);
-                        }
+                case "UserControlRender":
+                    if (!ViewObjects.ContainsKey(View.Render))
+                    {
+                        ViewObjects.Add(View.Render, new UCRender.RenderViewModel());
+                        StartStopViewModelBaseEventsListener(ViewObjects[View.Render], true);
+                    }
 
-                        CurrentViewModel = ViewObjects[View.Render];
-                        break;
-                }
-            }
-            catch (Exception ex)
-            {
-                Log.Error(ex, MethodBase.GetCurrentMethod()?.Name);
-                throw;
+                    CurrentViewModel = ViewObjects[View.Render];
+                    break;
             }
         }
-
-        private void InitialiseSettings()
-        {
-            var configuration = new ConfigurationBuilder()
-                            .SetBasePath($"{Directory.GetCurrentDirectory()}")
-                            .AddJsonFile("appsettings.json", false, true)
-                            .Build();
-
-            Log.Logger = new LoggerConfiguration()
-           .ReadFrom.Configuration(configuration)
-           .CreateLogger();
-
-            Log.Information($"{AppDomain.CurrentDomain.FriendlyName} has started at {DateTime.Now}");
-        }
-
 
         public void StartStopViewModelBaseEventsListener(ViewModelBase viewModel, bool start)
         {

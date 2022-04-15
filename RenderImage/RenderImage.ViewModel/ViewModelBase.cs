@@ -1,4 +1,6 @@
-﻿using Common.Helper;
+﻿using System;
+using System.Threading.Tasks;
+using RenderImage.Shared.Helper;
 
 namespace RenderImage.ViewModel
 {

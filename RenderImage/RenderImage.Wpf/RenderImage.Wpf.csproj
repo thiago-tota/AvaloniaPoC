@@ -1,9 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
-		<TargetFramework>net6.0</TargetFramework>
+		<TargetFramework>net6.0-windows</TargetFramework>
 		<Nullable>enable</Nullable>
-		<Platforms>x64</Platforms>
+		<UseWPF>true</UseWPF>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -32,18 +33,14 @@
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 	</ItemGroup>
+
 	<ItemGroup>
-		<PackageReference Include="Avalonia.Desktop" Version="0.10.13" />
-		<PackageReference Include="Avalonia.Diagnostics" Version="0.10.13" />
-		<PackageReference Include="Avalonia.ReactiveUI" Version="0.10.13" />
-		<PackageReference Include="Material.Avalonia" Version="2.5.1" />
+		<PackageReference Include="MaterialDesignThemes" Version="4.4.0" />
+		<PackageReference Include="System.Drawing.Common" Version="6.0.0" />
 	</ItemGroup>
+
 	<ItemGroup>
-		<ProjectReference Include="..\RenderImage.ViewModel\RenderImage.ViewModel.csproj" />
+	  <ProjectReference Include="..\RenderImage.ViewModel\RenderImage.ViewModel.csproj" />
 	</ItemGroup>
-	<ItemGroup>
-		<Compile Update="UCMediaStream\MediaStreamView.axaml.cs">
-			<DependentUpon>MediaStreamView.axaml</DependentUpon>
-		</Compile>
-	</ItemGroup>
+
 </Project>

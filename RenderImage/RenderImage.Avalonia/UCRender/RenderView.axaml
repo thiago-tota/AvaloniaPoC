@@ -2,14 +2,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:uc="clr-namespace:Component;assembly=Component"
+             xmlns:uc="clr-namespace:RenderImage.ViewModel.UCMediaStream;assembly=RenderImage.ViewModel"
+			 xmlns:ucm="clr-namespace:RenderImage.Avalonia.UCMediaStream"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              Width="800" Height="450"
              x:Class="RenderImage.Avalonia.UCRender.RenderView">
 
 	<UserControl.DataTemplates>
-		<DataTemplate DataType="{x:Type uc:UCMediaStreamViewModel}">
-			<uc:UCMediaStream/>
+		<DataTemplate DataType="{x:Type uc:MediaStreamViewModel}">
+			<ucm:MediaStreamView/>
 		</DataTemplate>
 	</UserControl.DataTemplates>
 
@@ -26,7 +27,7 @@
 		</StackPanel>
 
 		<Border Grid.Row="1" BorderThickness="1" BorderBrush="Black" Margin="5,0,5,0">
-			<ContentControl Content="{Binding MediaStreams}" Margin="0" />
+			<ContentControl Content="{Binding MediaStreams}" Margin="0" BorderBrush="Red" />
 		</Border>
 	</Grid>
 </UserControl>

@@ -1,7 +1,6 @@
-﻿using Common.Helper;
-using Component;
-using Serilog;
-using System.Reflection;
+﻿using System;
+using RenderImage.Shared.Helper;
+using RenderImage.ViewModel.UCMediaStream;
 
 namespace RenderImage.ViewModel.UCRender
 {
@@ -12,7 +11,7 @@ namespace RenderImage.ViewModel.UCRender
             StartCommand = new RelayCommand(StartCommandExecute);
             StopCommand = new RelayCommand(StopCommandExecute);
 
-            MediaStreams = new UCMediaStreamViewModel();
+            MediaStreams = new MediaStreamViewModel();
         }
 
         #region Commands declaration
@@ -30,14 +29,8 @@ namespace RenderImage.ViewModel.UCRender
 
         #region Binding Properties
 
-        private UCMediaStreamViewModel? mediaStreams;
-        public UCMediaStreamViewModel? MediaStreams { get => mediaStreams; set => SetProperty(ref mediaStreams, value); }
-
-        private uint streamWidth;
-        public uint StreamWidth { get => streamWidth; set => SetProperty(ref streamWidth, value); }
-
-        private uint streamHeight;
-        public uint StreamHeight { get => streamHeight; set => SetProperty(ref streamHeight, value); }
+        private MediaStreamViewModel? mediaStreams;
+        public MediaStreamViewModel? MediaStreams { get => mediaStreams; set => SetProperty(ref mediaStreams, value); }
 
         private bool isRendering;
         public bool IsRendering { get => isRendering; set => SetProperty(ref isRendering, value); }
@@ -46,56 +39,14 @@ namespace RenderImage.ViewModel.UCRender
 
         private void StartCommandExecute()
         {
-            try
-            {
-                MediaStreams?.StartRender();
-                IsRendering = true;
-            }
-            catch (Exception ex)
-            {
-                Log.Error(ex, MethodBase.GetCurrentMethod()?.Name);
-                throw;
-            }
-        }
-
-        private bool StartCommandCanExecute()
-        {
-            try
-            {
-                return !IsRendering;
-            }
-            catch (Exception ex)
-            {
-                Log.Error(ex, MethodBase.GetCurrentMethod()?.Name);
-                throw;
-            }
+            MediaStreams?.StartRender();
+            IsRendering = true;
         }
 
         private void StopCommandExecute()
         {
-            try
-            {
-                MediaStreams?.StopRender();
-                IsRendering = false;
-            }
-            catch (Exception ex)
-            {
-                Log.Error(ex, MethodBase.GetCurrentMethod()?.Name);
-                throw;
-            }
-        }
-
-        private bool StopCommandCanExecute()
-        {
-            try
-            {
-                return IsRendering;
-            }
-            catch (Exception ex)
-            {
-                Log.Error(ex, MethodBase.GetCurrentMethod()?.Name);
-                throw;
-            }
+            MediaStreams?.StopRender();
+            IsRendering = false;
         }
 
         public override void Dispose()
