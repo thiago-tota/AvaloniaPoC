@@ -7,32 +7,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Content Include="..\RenderImage.Shared\Assets\img001.jpg" Link="Assets\img001.jpg">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="..\RenderImage.Shared\Assets\img002.jpg" Link="Assets\img002.jpg">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="..\RenderImage.Shared\Assets\img003.jpg" Link="Assets\img003.jpg">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="..\RenderImage.Shared\Assets\img004.jpg" Link="Assets\img004.jpg">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="..\RenderImage.Shared\Assets\img005.jpg" Link="Assets\img005.jpg">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="..\RenderImage.Shared\Assets\img006.jpg" Link="Assets\img006.jpg">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="..\RenderImage.Shared\Assets\img007.jpg" Link="Assets\img007.jpg">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="..\RenderImage.Shared\Assets\img008.jpg" Link="Assets\img008.jpg">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-	</ItemGroup>
-	<ItemGroup>
 		<PackageReference Include="Avalonia.Desktop" Version="0.10.13" />
 		<PackageReference Include="Avalonia.Diagnostics" Version="0.10.13" />
 		<PackageReference Include="Avalonia.ReactiveUI" Version="0.10.13" />

@@ -5,6 +5,8 @@ using System.Globalization;
 using System.IO;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Formats.Png;
 
 namespace RenderImage.Wpf.Converter
 {
@@ -14,11 +16,10 @@ namespace RenderImage.Wpf.Converter
         {
             if (value == null) return null;
 
-            using var memory = new MemoryStream();
-
-            Bitmap bitmap = (Bitmap)value;
-            bitmap.Save(memory, ImageFormat.Png);
-            memory.Position = 0;
+            using var memoryStream = new MemoryStream();
+            var img = (Image)value;
+            img.Save(memoryStream, new PngEncoder());
+            memoryStream.Seek(0, SeekOrigin.Begin);
 
             var bitmapImage = new BitmapImage();
             bitmapImage.BeginInit();

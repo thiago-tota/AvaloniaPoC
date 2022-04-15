@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
 using Avalonia.Data.Converters;
 using Avalonia.Media.Imaging;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Formats.Png;
 
 namespace RenderImage.Avalonia.Converter
 {
@@ -14,8 +15,8 @@ namespace RenderImage.Avalonia.Converter
             if (value == null) return null;
 
             using var memoryStream = new MemoryStream();
-            var bitmap = (System.Drawing.Bitmap)value;
-            bitmap.Save(memoryStream, ImageFormat.Png);
+            var img = (Image)value;
+            img.Save(memoryStream, new PngEncoder());
             memoryStream.Seek(0, SeekOrigin.Begin);
 
             return new Bitmap(memoryStream);

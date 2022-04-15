@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Drawing;
 using RenderImage.Shared.Helper;
+using SixLabors.ImageSharp;
 
 namespace RenderImage.Shared.Dto
 {
@@ -13,8 +13,8 @@ namespace RenderImage.Shared.Dto
             set => SetProperty(ref id, value);
         }
 
-        private Bitmap stream;
-        public Bitmap Stream
+        private Image stream;
+        public Image Stream
         {
             get => stream;
             set => SetProperty(ref stream, value);

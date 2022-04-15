@@ -11,4 +11,10 @@
 		<ProjectReference Include="..\RenderImage.Shared\RenderImage.Shared.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Remove="SixLabors.ImageSharp" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="SixLabors.ImageSharp" Version="2.1.0" />
+	</ItemGroup>
 </Project>

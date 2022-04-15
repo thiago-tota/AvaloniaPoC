@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Drawing;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using RenderImage.Shared.Dto;
 using RenderImage.Shared.Helper;
+using SixLabors.ImageSharp;
 
 namespace RenderImage.ViewModel.UCMediaStream
 {
@@ -77,7 +77,7 @@ namespace RenderImage.ViewModel.UCMediaStream
                 for (int i = 0; i < _imageList?.Count; i++)
                 {
                     int randomIndex = new Random().Next(0, _imageListCopy.Count);
-                    MediaStreams[i].Stream = new Bitmap(_imageListCopy[randomIndex]);
+                    MediaStreams[i].Stream = Image.Load(_imageListCopy[randomIndex]);
                     MediaStreams[i].UpdatedAt = DateTime.UtcNow;
 
                     _imageListCopy.RemoveAt(randomIndex);
